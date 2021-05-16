@@ -1,0 +1,334 @@
+---
+title: "Introduccion a R y RStudio"
+output: 
+  learnr::tutorial:
+    progresive: true
+    allow_skip: true
+    language: es
+description: Actividades para resolver de forma asincrónica. 
+runtime: shiny_prerendered
+---
+
+```{r setup, include=FALSE}
+library(learnr)
+library(gradethisES)
+
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+## Sobre el tutorial
+
+En este tutorial vas a encontrar una serie de actividades para resolver de forma asincronica. Incluye preguntas de opcion multiple con una o mas respuestas correctas y ejercicios practicos donde tendras que escribir codigo. 
+
+##### Preguntas de opcion multiple
+
+Luego de elegir la o las respuestas que consideras correctas, deberas presionar *Enviar respuesta*. Automaticamente obtendras una correccion indicando si tu respuesta es correcta o no. Si no lo es podras elegir *Volver a intentar*.
+
+Cuando la pregunta permite seleccionar mas de una opcion, todas las opciones correctas deben estar tildadas para que la respuesta se considere como válida. 
+
+Ejemplo:
+
+```{r semana}
+quiz(
+  question("Selecciona todas las palabras que sean dias de la semana.",
+    answer("Silla"),
+    answer("Martes", correct = TRUE),
+    answer("Jueves", correct = TRUE),
+    answer("Tomate"),
+    allow_retry = TRUE
+  )
+)
+```
+
+
+##### Ejercicios
+
+Cuando la consigna requiera que escribas codigo vas a encontrar:
+
+- un recuadro donde escribir el codigo. 
+- un boton para ejecutarlo y probar si funciona correctamente.
+- un boton para obtener pistas que te ayuden a resolverlo. 
+- Un boton para reiniciar el ejercicio si queres empezar de cero.
+- Un boton para enviar la respuesta.
+
+Tras enviar la respuesta, obtendras feedback sobre tu ejercicio. 
+
+Ejemplo:
+
+Escribi *2 + 2* en el recuadro y ejecuta el codigo:
+
+```{r recuadro-ejemplo, exercise=TRUE}
+
+```
+
+```{r recuadro-ejemplo-hint}
+
+El codigo que debes correr es una suma. Para eso se utiliza el operador '+' y se pone un numero a cada lado del mismo. 
+
+```
+
+
+```{r recuadro-ejemplo-solution}
+2 + 2
+```
+
+```{r recuadro-ejemplo-check}
+
+grade_this({
+  # custom checking code appears here
+  if (identical(.result, .solution)) {
+    pass("Muy bien!")
+  }
+  fail("Algo no salio bien. Proba de nuevo..")
+})
+
+```
+
+
+
+Para comenzar la actividad pasa a la seccion siguiente.
+
+## Vectores
+
+Crea un vector llamado _cantidad_ y asignale el valor _4_. Solo tenes que crear el vector, no imprimir el valor en la consola. 
+
+```{r vector1, exercise=TRUE}
+
+
+```
+
+```{r vector1-hint-1}
+
+Recorda utilizar el operador de asignacion <-
+
+```
+
+```{r vector1-hint-2}
+
+A la izquierda del operador se ubica el nombre del objeto y a la derecha el valor que quiero asignarle. 
+
+```
+
+```{r vector1-solution}
+
+cantidad <- 4
+
+```
+
+```{r vector1-check}
+
+grade_this_code(correct = "Muy bien!")
+
+```
+
+Al vector _cantidad_ sumale _7_ e imprimi el resultado.  
+
+
+```{r vector2, exercise=TRUE}
+
+
+
+
+```
+
+```{r vector2-hint}
+
+Recorda que podes operar con el vector como si fuera un valor numerico. 
+
+```
+
+
+```{r vector2-solution}
+
+cantidad + 7
+
+```
+
+```{r vector2-check}
+
+grade_this_code(correct = "Venis barbaro!!")
+
+```
+
+Crea un vector llamado _cantidad2_ que valga _8_ y sumaselo a cantidad. 
+
+```{r vector3, exercise=TRUE}
+
+
+
+
+```
+
+```{r vector3-hint}
+
+Recorda que podes operar con los vectores como si fueran valores. 
+
+```
+
+
+```{r vector3-solution}
+
+cantidad2 <- 8
+cantidad + cantidad2
+
+```
+
+
+```{r vector3-check}
+
+grade_this_code(correct = "Segui asi.")
+
+```
+
+
+```{r vector4}
+quiz(
+  question('¿Que tipo de vector es _a <- c("dos", "tres", "ocho", "9", "10")_.',
+    answer("Numerico o Double", message = "Recorda que cuando uno o mas de los valores es texto, todo el vector se convierte automaticamente a texto (character)."),
+    answer("Texto o character", correct = TRUE),
+    answer("Logico", message = "Los vectores logicos son aquellos fomados por valores logicos, verdadero o falso (true o false)."),
+    answer("Mixto", message = "No existen los vectores mixtos. Cuando los datos no son todos del mismo tipo, R los convierte a la fuerza a uno u otro tipo."),
+    allow_retry = TRUE,
+    random_answer_order = TRUE
+  )
+)
+```
+
+```{r vector5}
+quiz(
+  question('¿Que tipo de vector es _b <- c(1, 5, 9)_.',
+    answer("Numerico o Double", correct = TRUE),
+    answer("Texto o character", message = "Para que valores numericos sean tomados como texto, tienen que escribirse entre comillas."),
+    answer("Logico", message = "Los vectores logicos son aquellos fomados por valores logicos, verdadero o falso (true o false)."),
+    answer("Mixto", message = "No existen los vectores mixtos. Cuando los datos no son todos del mismo tipo, R los convierte a la fuerza a uno u otro tipo."),
+    allow_retry = TRUE,
+    random_answer_order = TRUE
+  )
+)
+```
+
+```{r vector6}
+quiz(
+  question('¿Que tipo de vector es _c <- c(1, 5, 9, NA)_?',
+    answer("Numerico o Double", correct = TRUE),
+    answer("Texto o character", message = "Los valores faltantes (o NA) no modifican el tipo de vector."),
+    answer("Logico", message = "Los vectores logicos son aquellos fomados por valores logicos, verdadero o falso (true o false)."),
+    answer("Mixto", message = "No existen los vectores mixtos. Cuando los datos no son todos del mismo tipo, R los convierte a la fuerza a uno u otro tipo."),
+    allow_retry = TRUE,
+    random_answer_order = TRUE
+  )
+)
+```
+
+```{r vector7}
+quiz(
+  question('¿Que tipo de vector es _c si:\nc <- c(1, 5, 9)\nc <- as.character(c)?',
+    answer("Numerico o Double", message = "Si bien los valores son originalmente numericos, al aplicar la funcion _as.character()_ al vector y guardarlo sobre el mismo vector, lo convertimos en un vector de texto o character."),
+    answer("Texto o character", correct = TRUE),
+    answer("Logico", message = "Los vectores logicos son aquellos fomados por valores logicos, verdadero o falso (true o false)."),
+    answer("Mixto", message = "No existen los vectores mixtos. Cuando los datos no son todos del mismo tipo, R los convierte a la fuerza a uno u otro tipo."),
+    allow_retry = TRUE,
+    random_answer_order = TRUE
+  )
+)
+```
+
+```{r vector8}
+quiz(
+  question('¿Que resultado se obtiene al correr el siguiente codigo?nd <- c(3, 3, TRUE)\nsum(d)',
+    answer("Un error. No pueden realizarse operaciones matematicas con valores logicos.", message = "En realidad, el valor logico TRUE vale 1, y el FALSE a 0, por lo que pueden realizarse operaciones matematicas con ellos."),
+    answer("6", message = "Como TRUE no se encuentra entre comillas, se trata de un valor logico y vale 1."),
+    answer("7", correct = TRUE),
+    allow_retry = TRUE,
+    random_answer_order = TRUE
+    
+  )
+)
+```
+
+
+Extrae e imprimi los valores que ocupan las posiciones de _3 a 6_ en el vector z:
+```{r vec10, echo=FALSE}
+
+z <- c("perro", "gato", "vaca", "pingüino", "elefante", "tigre", "paloma", "raton")
+z
+
+
+```
+
+
+```{r vector9, exercise = TRUE}
+
+
+```
+
+
+```{r vector9-hint-1}
+
+Para extraer valores de un vector segun su posicion necesitas utilizar corchetes [].
+
+```
+
+```{r vector9-hint-2}
+
+Los dos puntos ':' te permiten extraer posiciones consecutivas.
+
+```
+
+```{r vector9-solution}
+
+z[3:6]
+
+```
+
+```{r vector9-check}
+
+grade_this_code(correct = "Venis super bien!")
+
+```
+
+Ahora, extrae los valores que se ubican en las posiciones 4 y 6.
+
+```{r vector10, exercise = TRUE}
+
+
+```
+
+
+```{r vector10-hint}
+
+Para extraer posiciones no consecutivas necesitas utilizar los corchetes y la funcion c() de combinar.
+
+```
+
+
+```{r vector10-solution}
+
+z[c(4,6)]
+
+```
+
+```{r vector10-check}
+
+grade_this_code(correct = "Queda poco! :D")
+
+```
+
+```{r vector11}
+quiz(
+  question('¿Cuales de los siguientes nombres son validos para un objeto en R? Selecciona todas las respuestas correctas.',
+    answer("preguntaCinco", correct = TRUE),
+    answer("pregunta_5", correct = TRUE),
+    answer("pregunta5", correct = TRUE),
+    answer("5ta.pregunta", message = "Los nombres de los objetos no pueden comenzar con un numero."),
+    answer("Pregunta cinco", message = "Los nombres de los objetos no pueden tener espacios vacios."),
+    answer("p.5", correct = TRUE),
+    answer("Preg-5", message = "Los nombres de los objetos solo pueden estar formados por letras, numeros, guion bajo (_) y punto (.)."),
+    allow_retry = TRUE,
+    random_answer_order = TRUE
+  )
+)
+
+```
+
