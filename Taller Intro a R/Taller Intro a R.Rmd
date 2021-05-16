@@ -184,7 +184,7 @@ grade_this_code(correct = "Segui asi.")
 
 ```{r vector4}
 quiz(
-  question('¿Que tipo de vector es _a <- c("dos", "tres", "ocho", "9", "10")_.',
+  question('Que tipo de vector es _a <- c("dos", "tres", "ocho", "9", "10")_.',
     answer("Numerico o Double", message = "Recorda que cuando uno o mas de los valores es texto, todo el vector se convierte automaticamente a texto (character)."),
     answer("Texto o character", correct = TRUE),
     answer("Logico", message = "Los vectores logicos son aquellos fomados por valores logicos, verdadero o falso (true o false)."),
@@ -197,7 +197,7 @@ quiz(
 
 ```{r vector5}
 quiz(
-  question('¿Que tipo de vector es _b <- c(1, 5, 9)_.',
+  question('Que tipo de vector es _b <- c(1, 5, 9)_.',
     answer("Numerico o Double", correct = TRUE),
     answer("Texto o character", message = "Para que valores numericos sean tomados como texto, tienen que escribirse entre comillas."),
     answer("Logico", message = "Los vectores logicos son aquellos fomados por valores logicos, verdadero o falso (true o false)."),
@@ -210,7 +210,7 @@ quiz(
 
 ```{r vector6}
 quiz(
-  question('¿Que tipo de vector es _c <- c(1, 5, 9, NA)_?',
+  question('Que tipo de vector es _c <- c(1, 5, 9, NA)_?',
     answer("Numerico o Double", correct = TRUE),
     answer("Texto o character", message = "Los valores faltantes (o NA) no modifican el tipo de vector."),
     answer("Logico", message = "Los vectores logicos son aquellos fomados por valores logicos, verdadero o falso (true o false)."),
@@ -223,7 +223,9 @@ quiz(
 
 ```{r vector7}
 quiz(
-  question('¿Que tipo de vector es _c si:\nc <- c(1, 5, 9)\nc <- as.character(c)?',
+  question('Que tipo de vector es _c si:
+           \n\nc <- c(1, 5, 9)
+           \n\nc <- as.character(c)?',
     answer("Numerico o Double", message = "Si bien los valores son originalmente numericos, al aplicar la funcion _as.character()_ al vector y guardarlo sobre el mismo vector, lo convertimos en un vector de texto o character."),
     answer("Texto o character", correct = TRUE),
     answer("Logico", message = "Los vectores logicos son aquellos fomados por valores logicos, verdadero o falso (true o false)."),
@@ -236,7 +238,7 @@ quiz(
 
 ```{r vector8}
 quiz(
-  question('¿Que resultado se obtiene al correr el siguiente codigo?nd <- c(3, 3, TRUE)\nsum(d)',
+  question('¿Que resultado se obtiene al correr el siguiente codigo?\nd <- c(3, 3, TRUE)\nsum(d)',
     answer("Un error. No pueden realizarse operaciones matematicas con valores logicos.", message = "En realidad, el valor logico TRUE vale 1, y el FALSE a 0, por lo que pueden realizarse operaciones matematicas con ellos."),
     answer("6", message = "Como TRUE no se encuentra entre comillas, se trata de un valor logico y vale 1."),
     answer("7", correct = TRUE),
@@ -331,4 +333,34 @@ quiz(
 )
 
 ```
+
+## Bases de datos
+
+Para los siguientes ejercicios vamos a trabajar con la base _diamantes_ del paquete _datos_. La base se encuentra ya cargada. Utilizá la función _glimpse()_ para ver que variables incluye y de que tipo es cada una de ellas. 
+
+```{r diamantes, message=FALSE, warning=FALSE, echo=FALSE}
+
+library(tidyverse)
+library(datos)
+diamantes <- diamantes
+
+```
+```{r base1, exercise=TRUE}
+
+
+
+```
+
+```{r base1-solution}
+
+glimpse(diamantes)
+
+```
+
+```{r base1-check}
+
+grade_this_code()
+
+```
+
 
