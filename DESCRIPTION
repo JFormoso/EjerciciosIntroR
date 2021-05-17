@@ -1,16 +1,16 @@
 Package: EjerciciosIntroR
 Type: Package
-Title: Actividades asincrónicas para el curso Analisis de datos con R (CIIPME)
+Title: Actividades asincronicas para el curso Analisis de datos con R (CIIPME)
 Version: 0.1.0
 Author: Jesica Formoso
-Maintainer: jesica.formoso@gmail.com
-Description: Actividades asincrónicas para un taller. 
-License: cc
+Maintainer: The package maintainer <jesica.formoso@gmail.com>
+Description: Actividades asincronicas para taller de R.
+License: What license is it under?
 Encoding: UTF-8
 LazyData: true
 Imports:
     tidyverse
-Remotes:
-    rstudio/learnr
+Remotes: 
+    rstudio/learnr,
     rstudio/gradethis
     
