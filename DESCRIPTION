@@ -11,6 +11,6 @@ LazyData: true
 Imports:
     tidyverse
 Remotes: 
-    rstudio/learnr
+    rstudio/learnr,
     rstudio/gradethis
     
