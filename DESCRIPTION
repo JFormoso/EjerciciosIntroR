@@ -9,6 +9,8 @@ License: cc
 Encoding: UTF-8
 LazyData: true
 Imports:
-    learnr,
     tidyverse
+Remotes:
+    rstudio/learnr
+    rstudio/gradethis
     
