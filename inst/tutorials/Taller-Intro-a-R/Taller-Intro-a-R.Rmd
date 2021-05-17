@@ -1,11 +1,11 @@
 ---
-title: "Introduccion a R y RStudio"
+title: "Introduccion a R y RStudio (CIIPME)"
 output: 
   learnr::tutorial:
     progresive: true
     allow_skip: true
     language: es
-description: Actividades para resolver de forma asincrónica. 
+description: Actividades para resolver de forma asincronica. 
 runtime: shiny_prerendered
 ---
 
@@ -537,13 +537,13 @@ random_encouragement <- function() {
 
 
 
-## Sobre el tutorial
+## Acerca de las actividades
 
 En este tutorial vas a encontrar una serie de actividades para resolver de forma asincronica. Incluye preguntas de opcion multiple con una o mas respuestas correctas y ejercicios practicos donde tendras que escribir codigo. 
 
 ##### Preguntas de opcion multiple
 
-Luego de elegir la o las respuestas que consideras correctas, deberas presionar *Enviar respuesta*. Automaticamente obtendras una correccion indicando si tu respuesta es correcta o no. Si no lo es podras elegir *Volver a intentar*.
+Luego de elegir la o las respuestas que consideras correctas, deberas presionar *Enviar respuesta*. Automaticamente obtendras una correccion indicando si tu respuesta es correcta o no. Si no lo es, podras elegir *Volver a intentar*.
 
 Cuando la pregunta permite seleccionar mas de una opcion, todas las opciones correctas deben estar tildadas para que la respuesta se considere como válida. 
 
@@ -572,7 +572,7 @@ Cuando la consigna requiera que escribas codigo vas a encontrar:
 - Un boton para reiniciar el ejercicio si queres empezar de cero.
 - Un boton para enviar la respuesta.
 
-Tras enviar la respuesta, obtendras feedback sobre tu ejercicio. 
+Tras enviar la respuesta, obtendras feedback sobre tu respuesta. 
 
 Ejemplo:
 
@@ -758,7 +758,9 @@ quiz(
 
 ```{r vector8}
 quiz(
-  question('¿Que resultado se obtiene al correr el siguiente codigo?\nd <- c(3, 3, TRUE)\nsum(d)',
+  question('Que resultado se obtiene al correr el siguiente codigo?
+           \n\nd <- c(3, 3, TRUE)
+           \n\nsum(d)',
     answer("Un error. No pueden realizarse operaciones matematicas con valores logicos.", message = "En realidad, el valor logico TRUE vale 1, y el FALSE a 0, por lo que pueden realizarse operaciones matematicas con ellos."),
     answer("6", message = "Como TRUE no se encuentra entre comillas, se trata de un valor logico y vale 1."),
     answer("7", correct = TRUE),
